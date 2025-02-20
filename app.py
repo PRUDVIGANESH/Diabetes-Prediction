@@ -6,7 +6,7 @@ from sklearn. metrics import accuracy_score
 
 st.set_page_config(page_title="Diabetes Prediction", layout="wide", page_icon="🧑‍⚕")
 
-diabetes_model_path =r"C:\Users\ADMIN\Desktop\rpg\diabetes_model.sav"
+diabetes_model_path ="diabetes_model.sav"
 diabetes_model=pickle.load(open(diabetes_model_path,'rb'))
 
 st.title('Diabetes prediction using ML')
@@ -61,7 +61,7 @@ if st.button('Diabetes Test Result'):
     except ValueError:
         st.error("Please enter valid numerical values for all fields.")
         if st.button('Show Model Accuracy'):
-            test_data=pd.read_csv("C:\Users\ADMIN\Desktop\rpg\diabetes.csv")
+            test_data=pd.read_csv("diabetes.csv")
             x_test=test_data.drop(columns=['Outcome'])
             y_test=test_data['Outcome']
 
